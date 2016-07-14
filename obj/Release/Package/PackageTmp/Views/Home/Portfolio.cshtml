@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "Portfolio";
+}
+
+
+<div class="bgImg">
+    <br />
+    <br />
+    <br />
+    <br />
+    <center><h1>Portfolio <s><small style="color:#FF5959">W e b s i t e s</small></s>...</h1></center>
+    <br />
+   <div class="container my-partners-section" style="background:none">
+        <div class="row">
+            <div id="bpartners-carousel" class="owl-carousel owl-theme">
+                <div class="item">
+                    <a href="http://jnewbycarfinder.azurewebsites.net/" target="_blank">
+                     <img class="img-responsive center-block" src="~/img/NewbyUploads/mariokartscreen.jpg">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="http://jenewby.com/" target="_blank">
+                        <img class="img-responsive center-block" src="~/img/NewbyUploads/jenewbydotcom.jpg">
+                    </a>
+                </div>
+
+                <div class="item">
+                   <img class="img-responsive center-block" src="~/img/NewbyUploads/pickle1.jpg">
+</div>
+                <div class="item">
+                    <a href="http://primarycarespecialists.co/" target="_blank">
+                        <img class="img-responsive center-block" src="~/img/NewbyUploads/pcs.jpg">
+                    </a>
+</div>
+                <div class="item">
+                    <a href="http://jnewbycarfinder.azurewebsites.net/" target="_blank">
+                        <img class="img-responsive center-block" src="~/img/NewbyUploads/mariokartscreen.jpg">
+                    </a>                
+                </div>
+                <div class="item">
+                    <a href="http://jenewby.com/" target="_blank">
+                        <img class="img-responsive center-block" src="~/img/NewbyUploads/jenewbydotcom.jpg">
+                    </a>                
+                </div>
+
+                <div class="item">
+                    <img class="img-responsive center-block" src="~/img/NewbyUploads/pickle1.jpg">
+                </div>
+                <div class="item">
+                    <a href="http://primarycarespecialists.co/" target="_blank">
+                        <img class="img-responsive center-block" src="~/img/NewbyUploads/pcs.jpg">
+                    </a>                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="vertical-align:middle">
+        <div class="row" style="padding-bottom:15px">
+            <div style="padding-bottom:25px" class="col-xs-12 col-sm-6">
+                <a href="http://jnewbycarfinder.azurewebsites.net/" target="_blank">
+                    <img class="img-responsive center-block" src="~/img/NewbyUploads/mariokartscreen.jpg">
+                </a> 
+            </div>
+            <div style="padding-bottom:25px" class="col-xs-12 col-sm-6">
+                <a href="http://primarycarespecialists.co/" target="_blank">
+                    <img class="img-responsive center-block" src="~/img/NewbyUploads/pcs.jpg">
+                </a>            
+            </div>
+            <div style="padding-bottom:25px" class="col-xs-12 col-sm-6">
+                <a href="http://theeclecticsocietymovement.com/" target="_blank">
+                    <img class="img-responsive" src="~/img/NewbyUploads/thesm.jpg" />
+                    </a>
+                </div>
+            <div style="padding-bottom:25px" class="col-xs-12 col-sm-6">
+                <a href="http://jenewby.com/" target="_blank">
+                    <img class="img-responsive center-block" src="~/img/NewbyUploads/jenewbydotcom.jpg">
+                </a>
+            </div>
+            <div style="padding-bottom:25px" class="col-xs-12 col-sm-6">
+                <img class="img-responsive" src="~/img/NewbyUploads/pickle1.jpg" />
+            </div>
+            <div style="padding-bottom:25px" class="col-xs-12 col-sm-6">
+                <a href="http://greenevdc.com/" target="_blank">
+                    <img class="img-responsive" src="~/img/NewbyUploads/greenv2.jpg" />
+                    </a>
+            </div>
+        </div>
+    </div>
+
+
+    <br /><br />
+
+</div>
+<!-- Footer Section -->
+<footer class="footer-section">
+    <div class="container">
+        <div class="row mt-30 mb-30">
+            <div class="col-md-12 text-center">
+                <!-- Footer Copy Right Text -->
+                <div class="copyright-info">
+                    <a href="#"><span><i class="fa fa-code"></i></span> with <span><i class="fa fa-heart"></i></span> By <span>Jenewby</span></a>
+                </div>
+
+                <!-- Footer Social Icons -->
+                <div class="social-icons mt-30">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+@section Scripts{
+    <script src="~/js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="~/js/5inputs.js"></script>
+    <script src="~/js/armstrong.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+
+            $('document').ready(function () {
+
+
+            $("#bpartners-carousel").owlCarousel({
+                // Partners Carousel Settings
+                navigation: false,
+                pagination: false,
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+                items: 3,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [979, 3],
+                stopOnHover: true,
+
+            });
+            });
+            //$('#expg').addClass('active');
+
+
+    </script>
+}

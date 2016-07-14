@@ -1,0 +1,918 @@
+﻿
+<div class="bgImg">
+    <br />
+    <br />
+    <br />
+    <br />
+    <center><h1>Javascript <s><small style="color:#FF5959">E x e r c i s e s</small></s>...</h1></center>
+    <br />
+    <div class="container" style="vertical-align:middle">
+        <div class="row" style="padding-bottom:15px">
+            <div class="col-xs-6 col-sm-3">
+                <h3 id="exs" style="text-shadow: 2px 2px 8px #FF5959;">Factorial</h3>
+
+                <!-- Trigger the modal with a button -->
+                <a id="pick" href="" data-toggle="modal" data-target="#factorialModal">
+                    <img class="img-responsive" src="../img/NewbyUploads/JavaScriptlogo.png" />
+                </a>
+
+                <!-- Modal -->
+                <div id="factorialModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-lg modal-dialog ">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Factorial</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="modal-body">
+                                        <h2>Factorial</h2>
+                                        <div style="background-color: white; border-color: #ff5959;">
+                                            <p style="color:black;">
+                                                Write a program that calculates the factorial of a number. The factorial of a non-negative integer n is the product of all positive integers less than or equal to n. (i.e.  5! = 5 x 4 x 3 x 2 x 1 = 120).
+                                            </p>
+                                        </div>
+                                        <input type="number" id="input" class="fixblue" style="box-shadow: 0px 0px 4px #ff5959; border-radius: 4px" /> &nbsp;
+                                        <input type="button" class="fixblue" style="background-color:#ff5959; color:white; padding: 5px 10px" id="click" value="Enter a number" onclick="factor()" />
+                                        <div id="display5" style="color:black; text-shadow: 2px 2px 8px #FF5959;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <pre class="brush:js">
+    function factor() {
+    document.getElementById('display5').innerHTML = "";
+    var input = parseInt(document.getElementById('input').value);
+    var total = 1;
+    if (input > 300) {
+        alert("number too high!  Choose a lower number.");
+        document.getElementById('input').value = "";
+    } else {
+        for (i = 1; i <= input; i++) {
+            if (i < input) {
+                document.getElementById('display5').innerHTML += i + " x ";
+            } else {
+                document.getElementById('display5').innerHTML += i + " = ";
+            };
+            total *= i;
+        };
+        document.getElementById('display5').innerHTML += total;
+    }
+   
+};
+</pre>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3">
+                <h3 id="exs" style="text-shadow: 2px 2px 8px #FF5959;">Phone Book</h3>
+
+                <!-- Trigger the modal with a button -->
+                <a href="" data-toggle="modal" data-target="#phonebookModal">
+                    <img class="img-responsive" src="../img/NewbyUploads/JavaScriptlogo.png" />
+                </a>
+
+                <!-- Modal -->
+                <div id="phonebookModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-lg modal-dialog ">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Phone Book</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="modal-body">
+                                        <p style="color:black">So you wanna use my phonebook aye?</p>
+
+                                        <!-- General Search Box -->
+
+                                        <label style="color:black">Search &nbsp;</label><input class="fixblue" style="border-color:#ff5959; width:165px" type="text" id="generalsearch" placeholder="Enter" onkeydown="if (event.keyCode == 13)
+                        document.getElementById('gs').click()" />
+                                        <input type="button" value="Search" id="gs" style="background-color:#ff5959; color:white" onclick="generalSearch()" /> <br><br>
+                                        <p style="color:black; text-shadow: 2px 2px 8px #FF5959;"><em>Advanced Search</em></p>
+
+                                        <!-- Advanced Search Box -->
+                                        <table>
+                                            <tr>
+                                                <td><label style="color:black">FirstName &nbsp; </label></td>
+                                                <td>
+                                                    <input class="fixblue" style="width:165px" type="text" id="fname" placeholder="First name" onkeydown="if (event.keyCode == 13)
+    document.getElementById('advSearch').click()" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label style="color:black">LastName &nbsp;</label></td>
+                                                <td>
+                                                    <input class="fixblue" style="width:165px" type="text" id="lname" placeholder="Last name" onkeydown="if (event.keyCode == 13)
+    document.getElementById('advSearch').click()" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label style="color:black">Phone &nbsp;</label></td>
+                                                <td>
+                                                    <input class="fixblue" style="width:165px" type="text" id="phonenumber" placeholder="(650) 888-8888" onkeydown="if (event.keyCode == 13)
+    document.getElementById('advSearch').click()" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label style="color:black">Email &nbsp;</label></td>
+                                                <td>
+                                                    <input class="fixblue" style="width:165px" type="email" id="email" placeholder="jenewby@example.com" onkeydown="if (event.keyCode == 13)
+    document.getElementById('advSearch').click()" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td align="right"><input type="button" id="advSearch" value="Search" style="background-color:white; color:#ff5959; outline-color:#ff5959;" onclick="advSearch();" /></td>
+                                            </tr>
+                                        </table>
+                                        <div class="row">
+                                            <div class="col-md-4 col-md-offset-5 col-sm-4 col-sm-offset-5">
+                                                <div id="here" style="color:black; text-shadow: 2px 2px 8px yellow;"><br></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <pre class="brush:js">
+        var people = {};
+        var peopleAr = [];
+        function directoryData() {
+            people.james = {
+                firstName: "James",
+                lastName: "Newby",
+                phoneNumber: "(650) 777-7777",
+                email: "james.newby@example.com"
+            };
+            people.olivia = {
+                firstName: "Olivia",
+                lastName: "Johnson",
+                phoneNumber: "(650) 888-8888",
+                email: "olivia.johson@example.com"
+            };
+            people.bob = {
+                firstName: "Bob",
+                lastName: "Costas",
+                phoneNumber: "(650) 999-9999",
+                email: "bob.costas@example.com"
+            };
+            people.mary = {
+                firstName: "Mary",
+                lastName: "Becker",
+                phoneNumber: "(543) 555-5555",
+                email: "mary.becker@example.com"
+            };
+            people.jhanine = {
+                firstName: "Jhanine",
+                lastName: "Trigo",
+                phoneNumber: "(543) 555-5555",
+                email: "miss.trigo@example.com"
+            };
+            people.todd = {
+                firstName: "Todd",
+                lastName: "Mitchell",
+                phoneNumber: "(232) 567-5426",
+                email: "todd.mitch@example.com"
+            };
+        }
+        //generalSearch
+        function generalSearch() {
+            directoryData();
+            var generalsearch = document.getElementById("generalsearch").value;
+            var pickles = false;
+            if (generalsearch === "") {
+                document.getElementById("here").innerHTML = "No information entered";
+            }
+            else
+            {
+                for (var i in people) {
+                    if (people[i].lastName.toLowerCase().includes(generalsearch)) {
+                        pickles = true;
+                        printContact(i);
+                    }
+                    else if (people[i].firstName.toLowerCase().includes(generalsearch)) {
+                        pickles = true;
+                        printContact(i);
+                    }
+                    else if (people[i].phoneNumber.includes(generalsearch)) {
+                        pickles = true;
+                        printContact(i);
+                    }
+                    else if (people[i].email.toLowerCase().includes(generalsearch)) {
+                        pickles = true;
+                        printContact(i);
+                    }
+                }
+                if (pickles == false) {
+                    document.getElementById("here").innerHTML = "Contact not found";
+                };
+            }
+        }
+       
+       
+        //advSearch
+        function advSearch() {
+            directoryData();
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var phonenumber = document.getElementById("phonenumber").value;
+            var email = document.getElementById("email").value;
+           
+            //declared flag so if result if called have no entry then no contact found message will appear
+            var flag = false;
+            if (lname === "" && fname === "" && phonenumber === "" && email === "") {
+                document.getElementById("here").innerHTML = "No information entered";
+            }
+            else {
+                for (var i in people) {
+                    if (lname !== "" && people[i].lastName.toLowerCase().includes(lname)) {
+                        flag = true;
+                        printContact(i);
+                    }
+                    else if (fname !== "" && people[i].firstName.toLowerCase().includes(fname)) {
+                        flag = true;
+                        printContact(i);
+                    }
+                    else if (phonenumber !== "" && people[i].phoneNumber.includes(phonenumber)) {
+                        flag = true;
+                        printContact(i);
+                    }
+                    else if (email !== "" && people[i].email.toLowerCase().includes(email)) {
+                        flag = true;
+                        printContact(i);
+                    }
+                }
+                if (flag == false) {
+                    document.getElementById("here").innerHTML = "Contact not found";
+                }
+            }
+        }
+        function printContact (i) {
+            document.getElementById("here").innerHTML = people[i].firstName + "<br>" + people[i].lastName + "<br>" + people[i].phoneNumber + "<br>" + people[i].email ;
+        }
+</pre>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <h3 id="exs" style="text-shadow: 2px 2px 8px #FF5959;">Palindrome</h3>
+
+                <!-- Trigger the modal with a button -->
+                <a href="" data-toggle="modal" data-target="#paliModal">
+                    <img class="img-responsive" src="../img/NewbyUploads/JavaScriptlogo.png" />
+                </a>
+
+                <!-- Modal -->
+                <div id="paliModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-lg modal-dialog ">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Palindrome</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="modal-body">
+                                        <div style="background-color:white;">
+                                            <p style="color:black">	Write a program that determines whether a word is a Palindrome (the same backward as it is forward – “radar” for example). Display the result to the user. </p>
+                                        </div>
+
+                                        <p style="color:black"><em>...pick a word, ...any word...</em></p>
+                                        <label style="color:black; text-shadow: 2px 2px 8px #FF5959;">Palindromious 2000: ENTER = > </label>
+                                        <input type="text" id="magicWord" placeholder="Enter your word" class="fixblue" style="box-shadow: 0px 0px 4px #ff5959;" />
+                                        <input type="button" class="fixblue" value="Test" style="background-color:#ff5959; border-radius: 5px; color:white;" onclick="start();" />
+
+                                        <h3>your fortune</h3><br />
+                                        <div id="resultspali" style="color:black; text-shadow: 2px 2px 8px #FF5959;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <pre class="brush:js">
+    function start() {
+    var entry = document.getElementById("magicWord").value;
+    var db = parseInt(entry);
+    var reverse = entry.split("").reverse().join("");
+    //alert(reverse);;
+    if (entry === "") {
+        alert("Umm.  You didn't enter anything?");
+    }
+   else if (entry.length === 1 && isNaN(db) === true) {
+        alert("Seriously?!  One letter?   I need at least 3.");
+    }
+   else if (entry.length === 2) {
+        alert("Sorry.  Your word is TOO short!  Enter something longer.");
+    }
+    else if (isNaN(db) === false) {
+        alert("Enter a word, not a number!  Pay attention.");
+    }
+    else if (entry === reverse) {
+        document.getElementById("resultspali").innerHTML = "Palindromiousness!!! " + entry + " is a Palindrome!";
+    }
+    else {
+        document.getElementById("resultspali").innerHTML = "Not a Palindrome dude.  Bummer.";
+    };
+}
+</pre>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xs-6 col-sm-3">
+                <h3 id="exs" style="text-shadow: 2px 2px 8px #FF5959;">Fizz Buzz</h3>
+                <!-- Trigger the modal with a button -->
+                <a href="" data-toggle="modal" data-target="#fizzbuzzModal">
+                    <img class="img-responsive" src="../img/NewbyUploads/JavaScriptlogo.png" />
+                </a>
+
+                <!-- Modal -->
+                <div id="fizzbuzzModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-lg modal-dialog ">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title" style="text-shadow: 2px 2px 8px #FF5959;">Fizz Buzz</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="modal-body">
+                                        <p style="color:black;">Write a program that accepts two numbers between 1 and 100 from the user. The program then iterates through all numbers from 1 to 100, printing numbers in ascending order to the screen. For each number that is a multiple of the first number input by the user, print <span>"Fizz"</span> instead of the number. For each number that is a multiple of the second number input by the user, print <span>"Buzz"</span> instead of the number. For numbers that are multiples of both numbers, print <span>"FizzBuzz"</span> instead of the number.</p>
+
+                                        <div id="displayfb" style="color:black; text-shadow: 2px 2px 8px #FF5959;"></div>
+
+                                        <br />
+                                        <br />
+                                        <label style="color:black">Entry 1 &nbsp; </label><input class="fixblue" type="number" id="fizzn1" placeholder="Enter a Number" min="0" max="100" style="width:155px; border-color:#ff5959" /> &nbsp;
+                                        <label style="color:black">Entry 2  &nbsp;</label><input class="fixblue" type="number" id="fizzn2" placeholder="Enter a Number" min="0" max="100" style="width:155px" /> &nbsp;
+                                        <input type="button" style="background-color:#ff5959; outline:none" value="FizzBuzz" onclick="compute()" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <pre class="brush:js">
+        var fizzn1;
+        var fizzn2;
+        function compute() {
+            fizzn1 = parseInt(document.getElementById('fizzn1').value);
+            fizzn2 = parseInt(document.getElementById('fizzn2').value);
+            for (var x = 1; x <= 100; x++) {
+                if (x % fizzn1 === 0 && x % fizzn2 === 0) {
+                    document.getElementById("displayfb").innerHTML+= "fizz buzz" + "<br>";
+                }
+                else if (x % fizzn2 === 0) {
+                    document.getElementById("displayfb").innerHTML+= "buzz" + "<br>";
+                }
+                else if (x % fizzn1 === 0){
+                    document.getElementById("displayfb").innerHTML+= "fizz" + "<br>";
+                }
+                else {
+                    document.getElementById("displayfb").innerHTML+= x + "<br>";
+                }
+            }
+        }
+</pre>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="padding-bottom:15px">
+            <div class="col-xs-6 col-sm-3">
+                <h3 id="exs" style="text-shadow: 2px 2px 8px #FF5959;">Even Or Odd</h3>
+
+                <!-- Trigger the modal with a button -->
+                <a href="" data-toggle="modal" data-target="#eoModal">
+                    <img class="img-responsive" src="../img/NewbyUploads/JavaScriptlogo.png" />
+                </a>
+
+                <!-- Modal -->
+                <div id="eoModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-lg modal-dialog ">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Even Or Odd</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="modal-body">
+                                        <h2>Ever Or Odd</h2>
+                                        <p style="color:black;">Simple.  Enter a number, and I'll let you know if its even or odd.</p>
+                                        <input type="number" class="fixblue" id="num1" placeholder="Enter a number" style="box-shadow: 0px 0px 4px #ff5959; color:black" />
+                                        <input type="button" class="fixblue" onclick="solve()" value="test" />
+                                        <div id="result" style="color:black; text-shadow: 2px 2px 8px #FF5959;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <pre class="brush:js">
+            function solve() {
+            var num1 = parseInt(document.getElementById("num1").value);
+            if (num1 % 2 === 0) {
+                document.getElementById("result").innerHTML = num1 + " is an even number";
+            } else {
+                
+                document.getElementById("result").innerHTML = num1 + " is an odd number";
+            }
+        }
+</pre>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3">
+                <h3 id="exs" style="text-shadow: 2px 2px 8px #FF5959;">Input 5</h3>
+
+                <!-- Trigger the modal with a button -->
+                <a href="" data-toggle="modal" data-target="#myModal">
+                    <img class="img-responsive" src="~/img/logo_JavaScriptsmallpink.png" />
+                </a>
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-lg modal-dialog ">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Input 5</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="modal-body">
+                                        <p style="color:black"><strong>Enter</strong> 5 numbers and I'll do the <a href="https://en.wikipedia.org/wiki/Mathematics" style="color:green; text-decoration:none">math</a>.</p>
+
+                                        <label style="color:black">Number 1 &nbsp;</label><input class="fixblue" style="color:black; border-color:#ff5959" type="number" id="n1" /><br />
+                                        <label style="color:black">Number 2 &nbsp;</label><input class="fixblue" style="color:black" type="number" id="n2" /><br>
+                                        <label style="color:black">Number 3 &nbsp;</label><input class="fixblue" style="color:black" type="number" id="n3" /><br>
+                                        <label style="color:black">Number 4 &nbsp;</label><input class="fixblue" style="color:black" type="number" id="n4" /><br>
+                                        <label style="color:black">Number 5 &nbsp;</label><input class="fixblue" style="color:black" type="number" id="n5" /><br><br>
+
+                                        <input type="button" style="color:red; padding: 5px 10px" value="Max" onclick="findMax();" id="maxbtn" /> &nbsp;
+                                        <input type="button" style="color:green; padding: 5px 10px" value="Min" onclick="findMin();" id="minbtn" />&nbsp;
+                                        <input type="button" style="color:blue; padding: 5px 10px" value="Mean" onclick="findMean();" id="meanbtn" />&nbsp;
+                                        <input type="button" style="color:darkorange; padding: 5px 10px" value="Sum" onclick="findSum();" id="sumbtn" />&nbsp;
+                                        <input type="button" style="color:darkviolet; padding: 5px 10px" value="Product" onclick="findProduct();" id="productbtn" /><br />
+
+                                        <div id="anotherbox" style="color:black; text-shadow: 2px 2px 8px #FF5959;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <pre class="brush:js">
+$('document').ready(function () {
+        var number1, number2, number3, number4, number5;
+        function getNumbers() {
+             number1 = parseInt($('#n1').val());
+             number2 = parseInt($('#n2').val());
+             number3 = parseInt($('#n3').val());
+             number4 = parseInt($('#n4').val());
+             number5 = parseInt($('#n5').val());
+        };
+        $('#maxbtn').click(function () {
+            getNumbers();
+            var maxResult = Math.max(number1, number2, number3, number4, number5);
+            $('#anotherbox').text("The Max Number is " + maxResult);
+        });
+        $('#minbtn').click(function () {
+            getNumbers();
+            var minResult = Math.min(number1, number2, number3, number4, number5);
+            $('#anotherbox').text("The Min Number is " + minResult);
+        });
+        $('#meanbtn').click(function () {
+            getNumbers();
+            var meanResult = (number1 + number2 + number3 + number4 + number5) / 5;
+            $('#anotherbox').text("The Mean is " + meanResult);
+        });
+        $('#sumbtn').click(function () {
+            getNumbers();
+            var sumResult = number1 + number2 + number3 + number4 + number5;
+            $('#anotherbox').text("The Sum is " + sumResult);
+        });
+        $('#productbtn').click(function () {
+            getNumbers();
+            var productResult = number1 * number2 * number3 * number4 * number5;
+            $('#anotherbox').text("The Product is " + productResult);
+        });
+    })
+</pre>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <h3 id="exs" style="text-shadow: 2px 2px 8px #FF5959;">Mr. Armstrong</h3>
+
+                <!-- Trigger the modal with a button -->
+                <a href="" data-toggle="modal" data-target="#armModal">
+                    <img class="img-responsive" src="~/img/logo_JavaScriptsmallpink.png" />
+                </a>
+
+                <!-- Modal -->
+                <div id="armModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-lg modal-dialog ">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Mr. Armstrong</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="modal-body">
+                                        <h3>Is your Arm strong? </h3>
+                                        <p style="color: black;">
+                                            An Armstrong number is an integer such that the sum of the cubes of its digits is equal to the number itself. (i.e. 371 is an Armstrong number since 33 + 73 + 13 = 371. Click the button below and I'll print all the armstrong numbers.
+                                        </p>
+                                        <input id="armbtn" type="button" style="color: black; text-shadow: 2px 2px 8px #FF5959;" value="Find Out" />
+                                        <br />
+                                        <br />
+                                        <div id="armDisplay" style="color: black; text-shadow: 2px 2px 8px #FF5959; background-color:white;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <pre class="brush:js">
+$('document').ready(function () {
+    $('#armbtn').click(function () {
+        arm();
+    })
+function arm() {
+    //var str = ""; needed to use .text
+    for (var i = 100; i < 1000; i++) {
+        var string = i.toString();
+     
+        var a = parseInt(string.substring(0, 1));
+        var b = parseInt(string.substring(1, 2));
+        var c = parseInt(string.substring(2, 3));
+        var total = Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3);
+        if (total === i) {
+            //str = str + " " +i;
+            $('#armDisplay').append(i + ", ");
+          
+        }
+    }
+}
+});
+</pre>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3">
+                <a href="http://jenewby.azurewebsites.net/"><h3 id="exs" style="color:black; text-shadow: 2px 2px 8px #FF5959;">GO BACK</h3></a>
+
+
+                <a id="goback" href="http://jenewby.azurewebsites.net/"><img class="img-responsive center-block" style="padding-top:15px" src="../img/NewbyUploads/goback.png" /></a>
+
+
+                <!--<div class="col-xs-6 col-sm-3">
+
+
+
+                </div>-->
+
+            </div>
+        </div>
+
+        <div class="portfolio-button text-center mt-50">
+            <button class="btn btn-primary portfolio-btn" id="loadmore1" style="margin-top: -35px; margin-bottom: 60px; color:black;">Load More</button>
+            <div id="lmdiv1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="~/img/NewbyUploads/blackeclectic1qixqy4o1_24_edited-1.png" class="img-responsive center" style="padding-bottom:30px;" />
+                    </div>
+                </div>
+
+                <center><h1>More <s><small style="color:#FF5959">E x e r c i s e s</small></s>...</h1></center>
+                <div class="row" style="padding-bottom: 80px;">
+                    <div class="col-xs-6 col-sm-3">
+                        <h3 id="exs" style="text-shadow: 2px 2px 8px #FF5959;">Mr. Armstrong</h3>
+
+                        <!-- Trigger the modal with a button -->
+                        <a href="" data-toggle="modal" data-target="#armModal">
+                            <img class="img-responsive" src="~/img/logo_JavaScriptsmallpink.png" />
+                        </a>
+
+                        <!-- Modal -->
+                        <div id="armModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-lg modal-dialog ">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Mr. Armstrong</h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-5">
+                                            <div class="modal-body">
+                                                <h3>Is your Arm strong? </h3>
+                                                <p style="color: black;">
+                                                    An Armstrong number is an integer such that the sum of the cubes of its digits is equal to the number itself. (i.e. 371 is an Armstrong number since 33 + 73 + 13 = 371. Click the button below and I'll print all the armstrong numbers.
+                                                </p>
+                                                <input id="armbtn" type="button" style="color: black; text-shadow: 2px 2px 8px #FF5959;" value="Find Out" />
+                                                <br />
+                                                <br />
+                                                <div id="armDisplay" style="color: black; text-shadow: 2px 2px 8px #FF5959; background-color:white;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-7">
+                                            <pre class="brush:js">
+$('document').ready(function () {
+    $('#armbtn').click(function () {
+        arm();
+    })
+function arm() {
+    //var str = ""; needed to use .text
+    for (var i = 100; i < 1000; i++) {
+        var string = i.toString();
+     
+        var a = parseInt(string.substring(0, 1));
+        var b = parseInt(string.substring(1, 2));
+        var c = parseInt(string.substring(2, 3));
+        var total = Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3);
+        if (total === i) {
+            //str = str + " " +i;
+            $('#armDisplay').append(i + ", ");
+          
+        }
+    }
+}
+});
+</pre>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3">
+                        <h3 id="exs" style="text-shadow: 2px 2px 8px #FF5959;">Input 5</h3>
+
+                        <!-- Trigger the modal with a button -->
+                        <a href="" data-toggle="modal" data-target="#myModal">
+                            <img class="img-responsive" src="~/img/logo_JavaScriptsmallpink.png" />
+                        </a>
+
+                        <!-- Modal -->
+                        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-lg modal-dialog ">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Modal Header</h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-5">
+                                            <div class="modal-body">
+                                                <p style="color:black"><strong>Enter</strong> 5 numbers and I'll do the <a href="https://en.wikipedia.org/wiki/Mathematics" style="color:green; text-decoration:none">math</a>.</p>
+
+                                                <label style="color:black">Number 1 &nbsp;</label><input class="fixblue" style="color:black; border-color:#ff5959" type="number" id="n1" /><br />
+                                                <label style="color:black">Number 2 &nbsp;</label><input class="fixblue" style="color:black" type="number" id="n2" /><br>
+                                                <label style="color:black">Number 3 &nbsp;</label><input class="fixblue" style="color:black" type="number" id="n3" /><br>
+                                                <label style="color:black">Number 4 &nbsp;</label><input class="fixblue" style="color:black" type="number" id="n4" /><br>
+                                                <label style="color:black">Number 5 &nbsp;</label><input class="fixblue" style="color:black" type="number" id="n5" /><br><br>
+
+                                                <input type="button" style="color:red; padding: 5px 10px" value="Max" onclick="findMax();" id="maxbtn" /> &nbsp;
+                                                <input type="button" style="color:green; padding: 5px 10px" value="Min" onclick="findMin();" id="minbtn" />&nbsp;
+                                                <input type="button" style="color:blue; padding: 5px 10px" value="Mean" onclick="findMean();" id="meanbtn" />&nbsp;
+                                                <input type="button" style="color:darkorange; padding: 5px 10px" value="Sum" onclick="findSum();" id="sumbtn" />&nbsp;
+                                                <input type="button" style="color:darkviolet; padding: 5px 10px" value="Product" onclick="findProduct();" id="productbtn" /><br />
+
+                                                <div id="anotherbox" style="color:black; text-shadow: 2px 2px 8px #FF5959;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-7">
+                                            <pre class="brush:js">
+       var number1, number2, number3, number4, number5;
+       function getNumbers() {
+           number1 = parseInt(document.getElementById('n1').value);
+           number2 = parseInt(document.getElementById('n2').value);
+           number3 = parseInt(document.getElementById('n3').value);
+           number4 = parseInt(document.getElementById('n4').value);
+           number5 = parseInt(document.getElementById('n5').value);
+       }
+       function findMax() {
+           getNumbers();
+           var maxResult = Math.max(number1, number2, number3, number4, number5);
+           document.getElementById('anotherbox').innerHTML = "The Max Number is " +maxResult;
+       }
+       function findMin() {
+           getNumbers();
+           var minResult = Math.min(number1, number2, number3, number4, number5);
+           document.getElementById('anotherbox').innerHTML = "The Min Number is " + minResult;
+       }
+       function findMean() {
+           getNumbers();
+           var meanResult = (number1 + number2 + number3 + number4 + number5) / 5;
+           document.getElementById('anotherbox').innerHTML = "The Mean is " + meanResult;
+       }
+       function findSum() {
+           getNumbers();
+           var sumResult = number1 + number2 + number3 + number4 + number5;
+           document.getElementById('anotherbox').innerHTML = "The Sum is " + sumResult;
+       }
+       function findProduct() {
+           getNumbers();
+           var productResult = number1 * number2 * number3 * number4 * number5;
+           document.getElementById('anotherbox').innerHTML = "The Product is " + productResult;
+       }
+</pre>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3">
+                        <h3 id="exs" style="text-shadow: 2px 2px 8px #FF5959;">Newby1</h3>
+                        <img class="img-responsive center-block" src="~/img/logo_JavaScriptsmallpink.png" />
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="http://jenewby.azurewebsites.net/"><h3 id="exs" style="color:white; text-shadow: 2px 2px 8px #FF5959;">Newby 2</h3></a>
+
+
+                        <a href="http://jenewby.azurewebsites.net/"><img class="img-responsive center-block" src="~/img/logo_JavaScriptsmallpink.png" /></a>
+
+
+                        <!--<div class="col-xs-6 col-sm-3">
+
+
+
+                        </div>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<center><h1>Portfolio <s><small style="color:#FF5959">W e b s i t e s</small></s>...</h1></center>
+
+        <div class="container my-partners-section" style="background:none">
+            <div class="row">
+    <div id="bpartners-carousel" class="owl-carousel owl-theme">
+                        <div class="item">
+                            <img class="img-responsive center-block" src="~/img/NewbyUploads/mariokartscreen.jpg">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive center-block" src="~/img/NewbyUploads/jenewbydotcom.jpg">
+                        </div>
+
+                        <div class="item">
+                            <img class="img-responsive center-block" src="~/img/NewbyUploads/pickle1.jpg">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive center-block" src="~/img/NewbyUploads/pcs.jpg" >
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive center-block" src="~/img/NewbyUploads/mariokartscreen.jpg">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive center-block" src="~/img/NewbyUploads/jenewbydotcom.jpg">
+                        </div>
+
+                        <div class="item">
+                            <img class="img-responsive center-block" src="~/img/NewbyUploads/pickle1.jpg">
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive center-block" src="~/img/NewbyUploads/pcs.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+    @section Scripts{
+    <script src="~/js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="~/js/5inputs.js"></script>
+    <script src="~/js/armstrong.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+
+            $('document').ready(function () {
+
+                $('#lmdiv1').hide();
+                $('#loadmore1').click(function () {
+                    $('#lmdiv1').toggle(1000);
+                });
+
+            //$("#bpartners-carousel").owlCarousel({
+            //    // Partners Carousel Settings
+            //    navigation: false,
+            //    pagination: false,
+            //    autoPlay: 3000, //Set AutoPlay to 3 seconds
+            //    items: 3,
+            //    itemsDesktop: [1199, 3],
+            //    itemsDesktopSmall: [979, 3],
+            //    stopOnHover: true,
+
+            //});
+            });
+            //$('#expg').addClass('active');
+
+
+    </script>
+    }
+
+    <br />
+</div>   
+ <!-- Footer Section -->
+<footer class="footer-section">
+    <div class="container">
+        <div class="row mt-30 mb-30">
+            <div class="col-md-12 text-center">
+                <!-- Footer Copy Right Text -->
+                <div class="copyright-info">
+                    <a href="#"><span><i class="fa fa-code"></i></span> with <span><i class="fa fa-heart"></i></span> By <span>Jenewby</span></a>
+                </div>
+
+                <!-- Footer Social Icons -->
+                <div class="social-icons mt-30">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

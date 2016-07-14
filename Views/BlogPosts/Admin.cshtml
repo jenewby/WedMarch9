@@ -1,0 +1,125 @@
+﻿@model IEnumerable<WedMarch9.Models.BlogPosts>
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+
+<div class="bgImg">
+    <br />
+    <br />
+    <center><h1>Admin <s><small style="color:#FF5959">B l o g  R e c o r d s</small></s>...</h1></center>
+    <p style="color:black; text-shadow: 2px 2px 8px #FF5959">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th style="color:#FF5959">
+                @Html.DisplayNameFor(f => f.Created)
+            </th>
+            <th style="color:#FF5959">
+                @Html.DisplayNameFor(model => model.Updated)
+            </th>
+            <th style="color:#FF5959">
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th style="color:#FF5959">
+                @Html.DisplayNameFor(model => model.Slug)
+            </th>
+            <th style="color:#FF5959">
+                @Html.DisplayNameFor(model => model.Body)
+            </th>
+            <th style="color:#FF5959">
+                @Html.DisplayNameFor(model => model.MediaUrl)
+            </th>
+            <th style="color:#FF5959">
+                @Html.DisplayNameFor(model => model.Published)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="color: black; text-shadow: 2px 2px 8px black;background:rgba(255,255,255,0.4);">
+                    @Html.DisplayFor(modelItem => item.Created)
+                </td>
+                <td style="color: black; text-shadow: 2px 2px 8px black; background:rgba(255,255,255,0.4);" >
+                    @Html.DisplayFor(modelItem => item.Updated)
+                </td>
+                <td style="color: #FF5959; background:rgba(255,255,255,0.4);">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td style="color: black; background:rgba(255,255,255,0.4);">
+                    @Html.DisplayFor(modelItem => item.Slug)
+                </td>
+                <td style="color: black;background:rgba(255,255,255,0.4);">
+                    @Html.DisplayFor(modelItem => item.Body)
+                </td>
+                <td style="color: black; text-shadow: 2px 2px 8px #FF5959;background:rgba(255,255,255,0.4);">
+                    @Html.DisplayFor(modelItem => item.MediaUrl)
+                </td>
+                <td style="color: black; text-shadow: 2px 2px 8px black;background:rgba(255,255,255,0.4);">
+                    @Html.DisplayFor(modelItem => item.Published)
+                </td>
+                <td style="background:rgba(255,255,255,0.4); text-shadow: 2px 2px 8px black">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <br />
+                    @Html.ActionLink("Details", "Details", new { slug = item.Slug }) <br />
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<style>
+    
+    table.scroll {
+    width: 100%; /* Optional */
+    /* border-collapse: collapse; */
+    border-spacing: 0;
+    border: 2px solid black;
+}
+
+thead tr th { 
+    height: 30px;
+    line-height: 30px;
+    /*text-align: left;*/
+}
+
+
+
+tbody { border-top: 2px solid black; }
+
+tbody td, thead th {
+ 
+    border-right: 1px solid black;
+}
+
+tbody td:last-child, thead th:last-child {
+    border-right: none;
+}</style>
+
+@section Scripts{
+<script>
+
+    var $table = $('table.scroll'),
+    $bodyCells = $table.find('tbody tr:first').children(),
+    colWidth;
+
+    // Adjust the width of thead cells when window resizes
+    $(window).resize(function () {
+        // Get the tbody columns width array
+        colWidth = $bodyCells.map(function () {
+            return $(this).width();
+        }).get();
+
+        // Set the width of thead columns
+        $table.find('thead tr').children().each(function (i, v) {
+            $(v).width(colWidth[i]);
+        });
+    }).resize(); // Trigger resize handler
+</script>
+
+}
